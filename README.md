@@ -1,12 +1,13 @@
 # Modelling-Waterborne-Cholera-Transmission-within-Refugee-Camps
 A compartmental epidemiological model, built with Python/SciPy, simulating the spread of cholera between two connected refugee camp clusters sharing a water source, and evaluating the impact of public health interventions on outbreak severity.
 
-Toolkit
-NumPy — numerical computation
-SciPy (odeint) — solving the system of ordinary differential equations (ODEs)
-Matplotlib — epidemic curves and intervention comparison plots
-The Model
-
+##Toolkit
+- **NumPy** — numerical computation
+- **SciPy (odeint)** — solving the system of ordinary differential equations (ODEs)
+- **Matplotlib** — epidemic curves and intervention comparison plots
+- **Google Colab** — development environment
+- 
+## The Model
 The model extends a standard SIR framework with an environmental (waterborne) transmission route and two coupled sub-populations, reflecting how cholera spreads in refugee camp settings where clusters may share contaminated water sources.
 
 Two clusters, each with its own set of compartments:
@@ -19,20 +20,18 @@ B — Bacterial concentration in the local water reservoir
 
 Symptomatic and asymptomatic individuals shed bacteria into the water at different rates (es, ea), and infection risk in each cluster depends on the local bacterial concentration relative to a saturation constant (K). A mixing parameter (m) allows bacterial contamination to spread from Cluster 1's water source into Cluster 2's, representing shared or nearby water infrastructure.
 
-Key parameters:
-
-Parameter	Meaning
-a1, a2	Exposure rate per cluster
-sigma	Proportion of infections that are symptomatic
-r	Recovery rate
-K	Water bacterial saturation constant
-ea, es	Bacterial shedding rate (asymptomatic / symptomatic)
-mb	Natural bacterial decay rate
-m	Cross-contamination/mixing rate between clusters
+## Key parameters:
+- **a1, a2** - Exposure rate per cluster
+- **sigma** -	Proportion of infections that are symptomatic
+- **r** -	Recovery rate
+- **K** - Water bacterial saturation constant
+- **ea, es** - Bacterial shedding rate (asymptomatic / symptomatic)
+- **mb** - Natural bacterial decay rate
+- **m** - Cross-contamination/mixing rate between clusters
 
 The basic reproduction number (R₀) is calculated analytically per cluster from these parameters, alongside numerically solving the ODE system with scipy.integrate.odeint.
 
-Validation
+## Validation
 
 Before analysis, the model is checked with basic unit tests on the simulated output:
 
