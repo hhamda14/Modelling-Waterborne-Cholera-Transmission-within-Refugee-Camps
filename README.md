@@ -6,17 +6,17 @@ A compartmental epidemiological model, built with Python/SciPy, simulating the s
 - **SciPy (odeint)** — solving the system of ordinary differential equations (ODEs)
 - **Matplotlib** — epidemic curves and intervention comparison plots
 - **Google Colab** — development environment
-- 
+
 ## The Model
 The model extends a standard SIR framework with an environmental (waterborne) transmission route and two coupled sub-populations, reflecting how cholera spreads in refugee camp settings where clusters may share contaminated water sources.
 
 Two clusters, each with its own set of compartments:
 
--**S** — Susceptible
--**Ia** — Infected, asymptomatic
--**Is** — Infected, symptomatic
--**R** — Recovered
--**B** — Bacterial concentration in the local water reservoir
+- **S** — Susceptible
+- **Ia** — Infected, asymptomatic
+- **Is** — Infected, symptomatic
+- **R** — Recovered
+- **B** — Bacterial concentration in the local water reservoir
 
 Symptomatic and asymptomatic individuals shed bacteria into the water at different rates (es, ea), and infection risk in each cluster depends on the local bacterial concentration relative to a saturation constant (K). A mixing parameter (m) allows bacterial contamination to spread from Cluster 1's water source into Cluster 2's, representing shared or nearby water infrastructure.
 
