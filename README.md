@@ -12,11 +12,11 @@ The model extends a standard SIR framework with an environmental (waterborne) tr
 
 Two clusters, each with its own set of compartments:
 
-S — Susceptible
-Ia — Infected, asymptomatic
-Is — Infected, symptomatic
-R — Recovered
-B — Bacterial concentration in the local water reservoir
+-**S** — Susceptible
+-**Ia** — Infected, asymptomatic
+-**Is** — Infected, symptomatic
+-**R** — Recovered
+-**B** — Bacterial concentration in the local water reservoir
 
 Symptomatic and asymptomatic individuals shed bacteria into the water at different rates (es, ea), and infection risk in each cluster depends on the local bacterial concentration relative to a saturation constant (K). A mixing parameter (m) allows bacterial contamination to spread from Cluster 1's water source into Cluster 2's, representing shared or nearby water infrastructure.
 
